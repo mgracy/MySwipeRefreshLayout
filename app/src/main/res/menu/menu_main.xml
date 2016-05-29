@@ -6,4 +6,10 @@
         android:orderInCategory="100"
         android:title="@string/menu_webview"
         app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/mnu_recyclerview"
+        android:orderInCategory="300"
+        android:title="@string/recyclerView"
+        app:showAsAction="never"/>
 </menu>
