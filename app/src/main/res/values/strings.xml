@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MySwipeRefreshLayout</string>
+    <string name="menu_webview">WebView</string>
+    <string name="clickMe">Click Me</string>
 </resources>
