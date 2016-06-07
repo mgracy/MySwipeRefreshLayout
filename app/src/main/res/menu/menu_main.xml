@@ -12,4 +12,34 @@
         android:orderInCategory="300"
         android:title="@string/recyclerView"
         app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/mnu_fragment"
+        android:orderInCategory="300"
+        android:title="@string/fragment"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/mnu_media"
+        android:orderInCategory="500"
+        android:title="Media"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/menu_audioRes"
+                android:orderInCategory="510"
+                android:title="audio from res"
+                app:showAsAction="never"></item>
+            <item
+                android:id="@+id/menu_audiSdCard"
+                android:orderInCategory="520"
+                android:title="audio from SdCard"
+                app:showAsAction="never"></item>
+            <item
+                android:id="@+id/menu_audioWeb"
+                android:orderInCategory="530"
+                android:title="audio from Web"
+                app:showAsAction="never"></item>
+        </menu>
+    </item>
 </menu>

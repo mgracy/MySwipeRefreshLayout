@@ -5,18 +5,13 @@ import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,6 +32,16 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        //隐藏标题栏
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //隐藏状态栏
+        //定义全屏参数
+        int flag= WindowManager.LayoutParams.FLAG_FULLSCREEN;
+        //获得当前窗体对象
+        Window window=MainActivity.this.getWindow();
+        //设置当前窗体为全屏显示
+        window.setFlags(flag, flag);
+
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         Log.d(TAG, "onCreate");
@@ -71,21 +76,24 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.mnu_webview:
-                openNewActivity();
+                openNewActivity(WebViewActivity.class);
                 break;
             case R.id.mnu_recyclerview:
-                Log.d(TAG, "onOptionsItemSelected");
-                Intent intent = new Intent(MainActivity.this, MyRecyclerView.class);
-                startActivity(intent);
+                openNewActivity(MyRecyclerView.class);
                 break;
-
+            case R.id.mnu_fragment:
+                openNewActivity(MyFragmentActivity.class);
+                break;
+            case R.id.menu_audioRes:
+                openNewActivity(AudioClass.class);
         }
         return true;
     }
 
-    public void openNewActivity(){
-        Log.d(TAG, "openNewActivity");
-        Intent intent = new Intent(getApplicationContext(), WebViewActivity.class);
+    public void openNewActivity(Class clazz){
+        Log.i(" -NEW- ","start " + clazz.getName() + " activity ");
+        Intent intent = new Intent();
+        intent.setClass(this, clazz);
         startActivity(intent);
     }
 }

@@ -3,4 +3,10 @@
     <string name="menu_webview">WebView</string>
     <string name="clickMe">Click Me</string>
     <string name="recyclerView">RecyclerView</string>
+    <string name="fragment">My Fragment</string>
+    <string name="Play">Play</string>
+    <string name="stop">Stop</string>
+    <string name="audioFromWeb">Audio From Web</string>
+    <string name="audioFromSdCard">Audio From SDCard</string>
+    <string name="audioFromRes">Audio From Res</string>
 </resources>

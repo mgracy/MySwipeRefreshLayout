@@ -2,4 +2,8 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fragment_weight">500dp</dimen>
+    <dimen name="fragment_wrapcontent_width">500dp</dimen>
+    <dimen name="fragment_wrapcontent_height">500dp</dimen>
+    <dimen name="textview_margin_left">10dp</dimen>
 </resources>
